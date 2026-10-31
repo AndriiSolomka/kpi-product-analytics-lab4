@@ -37,15 +37,42 @@ cp .env.example .env     # і вписати свій ключ
 python -m datapilot eda data/daily_metrics.csv
 ```
 
-### Де взяти API-ключ
+### Яку модель підключити
 
-* **Anthropic** (за замовчуванням): console.anthropic.com → API keys → Create key.
-  Покласти в `.env` як `ANTHROPIC_API_KEY=sk-ant-...`
-* **OpenAI**: platform.openai.com → API keys. У `.env` додати
-  `OPENAI_API_KEY=sk-...` і `DATAPILOT_PROVIDER=openai`.
+Інструмент працює з будь-яким із трьох варіантів — код однаковий, міняється
+лише `.env`.
 
-Провайдер визначається автоматично за наявним ключем; модель можна змінити
-змінною `DATAPILOT_MODEL`.
+**Локальна модель (ключ не потрібен).** Підійде будь-який сервер з
+OpenAI-сумісним API: Ollama, LM Studio, llama.cpp, vLLM. Для Ollama:
+
+```bash
+ollama serve
+ollama pull llama3.1
+```
+
+```ini
+# .env
+DATAPILOT_PROVIDER=ollama
+DATAPILOT_MODEL=llama3.1
+```
+
+Адреса `http://localhost:11434/v1` підставляється автоматично; для LM Studio —
+`DATAPILOT_PROVIDER=lmstudio`, для довільного сервера — `DATAPILOT_BASE_URL`.
+Частина локальних збірок не приймає строгий JSON-режим, тому запит
+автоматично повторюється без нього, а JSON витягується з тексту відповіді.
+
+**Anthropic:** console.anthropic.com → API keys → Create key, у `.env`
+`ANTHROPIC_API_KEY=sk-ant-...`
+
+**OpenAI:** platform.openai.com → API keys, у `.env` `OPENAI_API_KEY=sk-...`
+і `DATAPILOT_PROVIDER=openai`.
+
+Провайдер визначається автоматично: своя адреса → локальна модель, інакше за
+наявним ключем. Модель змінюється через `DATAPILOT_MODEL`.
+
+> Локальна модель слабша за хмарну у формулюваннях, але для цього інструменту
+> це менш критично, ніж зазвичай: числа вона не рахує, а все, що назве, однаково
+> перевіряється верифікатором проти фактів.
 
 **Без ключа інструмент теж запускається.** Прапорець `--no-llm` виконує лише
 детерміновану частину (усі розрахунки й таблиці), а без ключа і без прапорця
