@@ -1,0 +1,29 @@
+
+Профіль датасету
+Рядків: 7,825   Колонок: 11   Дублікатів: 0   Пам'ять: 1.39 МБ
+
+Колонки
+        колонка         тип  пропуски, %  унікальних
+           date    datetime          0.0          37
+            app categorical          0.0           5
+   country_name categorical          0.0         196
+       sessions     numeric          0.0         777
+session_minutes     numeric          0.0        4956
+   active_users     numeric          0.0         542
+      new_users     numeric          0.0         323
+    revenue_usd     numeric          0.0         671
+         payers     numeric          0.0          67
+     activities     numeric          0.0        2670
+avg_session_min     numeric          0.0        2194
+
+Прапорці якості даних (пораховано кодом)
+ • Колонка 'sessions': 1282 викидів за IQR (16.38%)
+ • Колонка 'session_minutes': 1263 викидів за IQR (16.14%)
+ • Колонка 'active_users': 1355 викидів за IQR (17.32%)
+ • Колонка 'new_users': 1238 викидів за IQR (15.82%)
+ • Колонка 'revenue_usd': 81.97% нулів — перевірте, чи це не пропуски
+ • Колонка 'revenue_usd': 1411 викидів за IQR (18.03%)
+ • Колонка 'payers': 81.97% нулів — перевірте, чи це не пропуски
+ • Колонка 'payers': 1411 викидів за IQR (18.03%)
+ • Колонка 'activities': 1369 викидів за IQR (17.5%)
+ • Колонка 'avg_session_min': 1530 викидів за IQR (19.55%)

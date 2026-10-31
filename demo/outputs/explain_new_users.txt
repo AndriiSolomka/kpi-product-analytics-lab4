@@ -1,0 +1,22 @@
+
+Метрика new_users
+Базовий період   2024-04-05..2024-04-19: 27,204.0
+Порівнюваний     2024-04-20..2024-05-11: 112,589.0
+Зміна: 85,385.0 (313.87%)
+
+Внесок сегментів: app
+  group    base  compare  change  change_pct  contribution_pct
+ mobile 17096.0 111109.0 94013.0      549.91            110.10
+    ios  8710.0     89.0 -8621.0      -98.98            -10.10
+android   775.0     79.0  -696.0      -89.81             -0.82
+desktop   623.0   1312.0   689.0      110.59              0.81
+unknown     0.0      0.0     0.0         NaN              0.00
+
+Внесок сегментів: country_name
+                   group   base  compare  change  change_pct  contribution_pct
+United States of America 5243.0  21991.0 16748.0      319.44             19.61
+      Dominican Republic  903.0   8831.0  7928.0      877.96              9.29
+            South Africa 2801.0  10681.0  7880.0      281.33              9.23
+                    Peru  962.0   7689.0  6727.0      699.27              7.88
+                 Ukraine 3738.0   8716.0  4978.0      133.17              5.83
+                   Spain  916.0   5743.0  4827.0      526.97              5.65

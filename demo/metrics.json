@@ -1,0 +1,32 @@
+{
+  "period": {
+    "from": "2024-04-05",
+    "to": "2024-05-11",
+    "days": 37
+  },
+  "new_users_total": 139793,
+  "revenue_usd_total": 93749.58,
+  "payers_total": 2218,
+  "payer_rate_pct": 3.7,
+  "arppu_usd": 11.87,
+  "avg_session_min": 30.09,
+  "dau_first_day": 794,
+  "dau_peak": 33071,
+  "dau_last_day": 6367,
+  "new_users_by_app": {
+    "android": 854,
+    "desktop": 1935,
+    "ios": 8799,
+    "mobile": 128205,
+    "unknown": 0
+  },
+  "ios_new_users_before_apr20": 8710,
+  "ios_new_users_after_apr20": 89,
+  "revenue_top5_countries": {
+    "Ukraine": 22954.52,
+    "United States of America": 19141.17,
+    "South Africa": 6053.4,
+    "Chile": 5513.7,
+    "Spain": 4895.21
+  }
+}

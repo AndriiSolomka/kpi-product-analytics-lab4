@@ -1,0 +1,120 @@
+
+Зрізи, на яких будуються гіпотези
+{
+  "dataset": "users.csv",
+  "rows": 60000,
+  "columns": [
+    "user_id",
+    "reg_date",
+    "app",
+    "country_code",
+    "country_name",
+    "gender",
+    "age",
+    "group_id",
+    "sessions_cnt",
+    "total_duration_min",
+    "active_days",
+    "activities_cnt",
+    "contacts_cnt",
+    "payments_cnt",
+    "revenue_usd",
+    "is_payer",
+    "age_group",
+    "avg_session_min"
+  ],
+  "segment_cuts": [
+    {
+      "segment": "app",
+      "groups": [
+        {
+          "group": "android",
+          "rows": 387,
+          "share_pct": 0.65,
+          "avg_revenue_usd": 1.8413,
+          "avg_is_payer": 0.1137,
+          "avg_payments_cnt": 0.1628,
+          "avg_total_duration_min": 512.5811,
+          "avg_sessions_cnt": 15.9974,
+          "avg_avg_session_min": 28.6831
+        },
+        {
+          "group": "desktop",
+          "rows": 1051,
+          "share_pct": 1.75,
+          "avg_revenue_usd": 0.688,
+          "avg_is_payer": 0.0618,
+          "avg_payments_cnt": 0.0866,
+          "avg_total_duration_min": 502.1699,
+          "avg_sessions_cnt": 15.2093,
+          "avg_avg_session_min": 31.3892
+        },
+        {
+          "group": "ios",
+          "rows": 2610,
+          "share_pct": 4.35,
+          "avg_revenue_usd": 0.5758,
+          "avg_is_payer": 0.0475,
+          "avg_payments_cnt": 0.0678,
+          "avg_total_duration_min": 162.5787,
+          "avg_sessions_cnt": 5.049,
+          "avg_avg_session_min": 28.7213
+        },
+        {
+          "group": "mobile",
+          "rows": 55951,
+          "share_pct": 93.25,
+          "avg_revenue_usd": 0.4182,
+          "avg_is_payer": 0.0355,
+          "avg_payments_cnt": 0.0515,
+          "avg_total_duration_min": 217.8648,
+          "avg_sessions_cnt": 7.3103,
+          "avg_avg_session_min": 27.0973
+        },
+        {
+          "group": "unknown",
+          "rows": 1,
+          "share_pct": 0.0,
+          "avg_revenue_usd": 0.0,
+          "avg_is_payer": 0.0,
+          "avg_payments_cnt": 0.0,
+          "avg_total_duration_min": 2096.7,
+          "avg_sessions_cnt": 96.0,
+          "avg_avg_session_min": 21.84
+        }
+      ],
+      "spread": {
+        "revenue_usd": {
+          "best_group": "android",
+          "best_value": 1.8413,
+          "worst_group": "unknown",
+          "worst_value": 0.0,
+          "ratio": null
+        },
+        "is_payer": {
+          "best_group": "android",
+          "best_value": 0.1137,
+          "worst_group": "unknown",
+          "worst_value": 0.0,
+          "ratio": null
+        },
+        "payments_cnt": {
+          "best_group": "android",
+          "best_value": 0.1628,
+          "worst_group": "unknown",
+          "worst_value": 0.0,
+          "ratio": null
+        },
+        "total_duration_min": {
+          "best_group": "unknown",
+          "best_value": 2096.7,
+          "worst_group": "ios",
+          "worst_value": 162.5787,
+          "ratio": 12.9
+        },
+        "sessions_cnt": {
+          "best_group": "unknown",
+          "best_value": 96.0,
+          "worst_group": "ios",
+          "worst_value": 5.049,
+          "ratio": 19.01

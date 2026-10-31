@@ -1,0 +1,22 @@
+
+Метрика revenue_usd
+Базовий період   2024-04-05..2024-04-19: 13,114.27
+Порівнюваний     2024-04-20..2024-05-11: 80,635.31
+Зміна: 67,521.04 (514.87%)
+
+Внесок сегментів: app
+  group    base  compare   change  change_pct  contribution_pct
+ mobile 6723.22 76474.18 69750.96     1037.46            103.30
+    ios 4441.18   404.08 -4037.10      -90.90             -5.98
+desktop  389.15  2908.60  2519.45      647.42              3.73
+android 1560.72   848.45  -712.27      -45.64             -1.05
+unknown    0.00     0.00     0.00         NaN              0.00
+
+Внесок сегментів: country_name
+                                               group    base  compare   change  change_pct  contribution_pct
+                                             Ukraine 3701.50 19253.02 15551.52      420.14             23.03
+                            United States of America 4454.62 14686.55 10231.93      229.69             15.15
+                                        South Africa  472.06  5581.34  5109.28     1082.34              7.57
+                                               Chile  629.99  4883.71  4253.72      675.20              6.30
+                                               Spain  335.61  4559.60  4223.99     1258.60              6.26
+United Kingdom of Great Britain and Northern Ireland  319.06  3647.83  3328.77     1043.31              4.93
