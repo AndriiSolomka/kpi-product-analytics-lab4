@@ -226,8 +226,8 @@ def main(argv=None) -> None:
     if not getattr(args, "no_llm", False):
         print(f"{DIM}LLM: {cfg.provider} / {cfg.model}{RESET}", file=sys.stderr)
         if cfg.provider == "mock":
-            print(f"{YELLOW}API-ключ не знайдено — працюю в режимі mock. "
-                  f"Для справжніх відповідей задайте ANTHROPIC_API_KEY або OPENAI_API_KEY.{RESET}",
+            print(f"{YELLOW}Локальну модель не знайдено — працюю в режимі mock. "
+                  f"Запустіть LM Studio (lms server start) або Ollama, чи задайте API-ключ у .env.{RESET}",
                   file=sys.stderr)
     try:
         args.func(args)

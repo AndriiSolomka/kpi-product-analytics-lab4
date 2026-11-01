@@ -29,8 +29,8 @@ LOCAL_DEFAULT_URLS = {
 
 @dataclass
 class LLMConfig:
-    provider: str = "anthropic"
-    model: str = "claude-sonnet-4-5"
+    provider: str = "lmstudio"
+    model: str = "gemma-4-e4b-it-mlx"
     max_tokens: int = 2000
     temperature: float = 0.2
     base_url: str | None = None   # для локальних моделей
@@ -50,6 +50,18 @@ def _load_dotenv() -> None:
                 os.environ.setdefault(k.strip(), v.strip())
 
 
+def _detect_local_server() -> str | None:
+    """Без налаштувань шукаємо запущений локальний сервер: спершу LM Studio, потім Ollama."""
+    import urllib.request
+    for provider in ("lmstudio", "ollama"):
+        try:
+            urllib.request.urlopen(LOCAL_DEFAULT_URLS[provider] + "/models", timeout=0.5)
+            return provider
+        except OSError:
+            continue
+    return None
+
+
 def resolve_config(provider: str | None = None, model: str | None = None) -> LLMConfig:
     _load_dotenv()
     provider = provider or os.environ.get("DATAPILOT_PROVIDER")
@@ -63,11 +75,11 @@ def resolve_config(provider: str | None = None, model: str | None = None) -> LLM
         elif os.environ.get("OPENAI_API_KEY"):
             provider = "openai"
         else:
-            provider = "mock"
+            provider = _detect_local_server() or "mock"
     if provider in LOCAL_DEFAULT_URLS:
         base_url = base_url or LOCAL_DEFAULT_URLS[provider]
     defaults = {"anthropic": "claude-sonnet-4-5", "openai": "gpt-4o-mini",
-                "ollama": "llama3.1", "lmstudio": "local-model", "local": "llama3.1",
+                "ollama": "llama3.1", "lmstudio": "gemma-4-e4b-it-mlx", "local": "llama3.1",
                 "mock": "mock"}
     model = model or os.environ.get("DATAPILOT_MODEL") or defaults.get(provider, "mock")
     return LLMConfig(provider=provider, model=model, base_url=base_url)

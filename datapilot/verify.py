@@ -54,7 +54,9 @@ def collect_numbers(obj, acc: set[float] | None = None) -> set[float]:
 
 
 def _matches(value: float, allowed: set[float], tol: float) -> bool:
-    for a in allowed:
+    # Знак модель передає словами («падіння на 98.98%» для -98.98), тому порівнюємо модулі.
+    value = abs(value)
+    for a in map(abs, allowed):
         if abs(a - value) <= max(tol * abs(a), 1e-9):
             return True
         # Модель часто округлює: 139793 -> 139.8 тис., 0.7254 -> 72.5%

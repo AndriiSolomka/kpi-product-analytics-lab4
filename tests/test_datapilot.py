@@ -24,6 +24,12 @@ def test_verifier_catches_invented_number():
     assert not bad["ok"] and 150000.0 in bad["unverified"]
 
 
+def test_verifier_accepts_sign_expressed_in_words():
+    facts = {"change_pct": -98.98}
+    assert verify_text("iOS: падіння на 98.98%", facts)["ok"]
+    assert not verify_text("iOS: падіння на 77.7%", facts)["ok"]
+
+
 def test_verifier_tolerates_rounding_and_units():
     facts = {"new_users": 139793, "conversion": 0.0432}
     v = verify_text("Прийшло 139,8 тис. користувачів, конверсія 4.32%", facts)

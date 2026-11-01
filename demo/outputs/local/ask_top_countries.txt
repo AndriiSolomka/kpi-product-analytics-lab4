@@ -1,0 +1,23 @@
+[2mLLM: lmstudio / gemma-4-e4b-it-mlx[0m
+
+[1mЗгенерований код[0m
+result = df.groupby('country_name')['amount_usd'].sum().nlargest(10)
+
+[1mПояснення[0m
+Цей код групує дані за назвою країни, обчислює загальну виручку (суму 'amount_usd') для кожної країни, а потім сортує їх за спаданням і вибирає топ-10.
+[2m • припущення: Виручка визначається сумою колонки 'amount_usd'.[0m
+
+[1mРезультат[0m
+                                                      amount_usd
+country_name                                                    
+Ukraine                                                 22954.52
+United States of America                                19141.17
+South Africa                                             6053.40
+Chile                                                    5513.70
+Spain                                                    4895.21
+United Kingdom of Great Britain and Northern Ireland     3966.89
+Kazakhstan                                               3669.68
+Argentina                                                2957.92
+Germany                                                  2689.54
+Poland                                                   2210.52
+[2m(рядків усього: 10)[0m
